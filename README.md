@@ -69,10 +69,10 @@ The following is the description of the zegocloud server interface, which is thi
 | Message | string | Required |  |
 | RequestId | string | Required |  |
 | Data | object | Not required |  |
-| &nbsp;└ TotalCount | integer | optional | total number of rooms |
-| &nbsp;└ RoomList | array | Not required | Room list, sorted as: number of people from most to least |
-| &nbsp;&nbsp;└ RoomId | string | Optional | RoomId |
-| &nbsp;&nbsp;└ UserCount | integer | optional | number of users |
+|     └ TotalCount | integer | optional | total number of rooms |
+|     └ RoomList | array | Not required | Room list, sorted as: number of people from most to least |
+|         └ RoomId | string | Optional | RoomId |
+|         └ UserCount | integer | optional | number of users |
 
 ### Example
 

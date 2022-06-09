@@ -1,15 +1,14 @@
 # EasyExample Call Server - NodeJS
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ZEGOCLOUD/easy_example_call_server_nodejs)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ZEGOCLOUD/room_list_server_nodejs)
 
-This repository is use for deploy a backend service for obtain ZEGO auth token and sending FCM messages to device as call invitation.
 
-For now, we use it for the project as shown below:
-- [easy_example_flutter](https://github.com/ZEGOCLOUD/easy_example_flutter)
-- [easy_example_react_native](https://github.com/ZEGOCLOUD/easy_example_react_native)
-- [easy_example_web](https://github.com/ZEGOCLOUD/easy_example_web)
-- [easy_example_android](https://github.com/ZEGOCLOUD/easy_example_android)
-- [easy_example_ios](https://github.com/ZEGOCLOUD/easy_example_ios)
+This is an example of a server program for "querying the room list under your appid"
+
+Notice
+1. This function needs to contact us to activate it to use
+2. Since this function has a QPS limit of 20/s, we have made a simple 500ms cache logic in the example
+
 
 ## Getting started
 
@@ -21,20 +20,12 @@ Create project on [ZEGOCLOUD Console](https://console.zegocloud.com), then get t
 
 - Get your ServerSecret from ZEGOCLOUD Console [My Projects -> project's Edit -> Basic Configurations](https://console.zegocloud.com/project)
 
-### Create Firebase project
-
-We use [Firebase FCM](https://firebase.google.com/docs/cloud-messaging) for notification service.
-
-1. Go to [Firebase Console](https://console.firebase.google.com/) and create new project if you don't have one.
-
-2. Generate `Firebase Admin SDK Private Key`
-
-![Generate Key](docs/images/fcm_admin_sdk_key.gif)
-
 ### Deploy service
 
 1. Click this deploy button at the top of this page to start deploy your service.
+
 ![](docs/images/deploy_to_heroku.jpg)
+
 2. Pick your Heroku app-name and fill in the input box.
 3. Open the `Firebase Admin SDK Private Key` you just obtain at the above step, and fill in the content to the `Config Vars` parameter input box.
 4. Press `Deploy App` button, wait for the depoly process completed.

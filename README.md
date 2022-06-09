@@ -5,9 +5,9 @@
 This is an example of a server program for "querying the room list under your appid"
 
 Notice
+
 1. This function needs to contact us to activate it to use
 2. Since this function has a QPS limit of 20/s, we have made a simple 500ms cache logic in the example
-
 
 ## Getting started
 
@@ -16,27 +16,96 @@ Notice
 Create project on [ZEGOCLOUD Console](https://console.zegocloud.com), then get the required info as shown below:
 
 - Get your AppID from ZEGOCLOUD Console [My Projects](https://console.zegocloud.com/project)
-
-- Get your ServerSecret from ZEGOCLOUD Console [My Projects -> project's Edit -> Basic Configurations](https://console.zegocloud.com/project)
+- Get your ServerSecret from ZEGOCLOUD Console [My Projects -&gt; project&#39;s Edit -&gt; Basic Configurations](https://console.zegocloud.com/project)
 
 ### Deploy service
 
 1. Click this deploy button at the top of this page to start deploy your service.
 
-![](docs/images/deploy_to_heroku.jpg)
+![1654767167240.png](image/README/1654767167240.png)![](docs/images/deploy_to_heroku.jpg)
 
 2. Pick your Heroku app-name and fill in the input box.
-3. Open the `Firebase Admin SDK Private Key` you just obtain at the above step, and fill in the content to the `Config Vars` parameter input box.
-4. Press `Deploy App` button, wait for the depoly process completed.
-5. Once done you will get an url for your instance, try accessing `https://<heroku url>/access_token?uid=1234` to check if it works.
+3. Fill in the appid and serverSecret of your zegocloud projectPress `Deploy App` button, wait for the depoly process completed
+4. Once done you will get an url for your instance, try accessing `https://<heroku url>/describe_room_list` to check if it works.
 
-## Note
 
-Token valid in 3600 seconds by default. If you want to change the expired time, request with the `expired_ts` parameter. e.g. `https://<heroku url>/access_token?uid=1234&expired_ts=7200`
+
+
+
+## Protocol description
+The following is the description of the zegocloud server interface, which is thid demo used
+### Interface prototype
+- Interface name: get room list
+- Request method: GET
+- Request path: /?Action=DescribeRoomList
+
+### Query parameters
+
+| Parameter name | Required | Description |
+| ---------------- | -------- | ----------------------- -------------------------------------------------- --- |
+| AppId | Required | |
+| Signature | Required | |
+| SignatureNonce | Required | |
+| SignatureVersion | Required | |
+| Timestamp | Required | |
+| PageIndex | Not required | The page number of the query, default value: 1. The page number should not be greater than [Total/PageSize], otherwise it will not contain any room data. |
+| PageSize | Optional | Number of rooms per page, default: 100. Value range [1,200]. |
+
+### Response
+
+| Parameter name | Type | Required | Remarks |
+| ------------------------ | ------- | -------- | ------- ----------------------- |
+| Code | number | Required | None |
+| Message | string | Required | None |
+| RequestId | string | Required | None |
+| Data | object | Not required | None |
+| &nbsp;└ TotalCount | integer | optional | total number of rooms |
+| &nbsp;└ RoomList | array | Not required | Room list, sorted as: number of people from most to least |
+| &nbsp;&nbsp;└ RoomId | string | Optional | RoomId |
+| &nbsp;&nbsp;└ UserCount | integer | optional | number of users |
+
+### Example
+
+---
+
+#### request
+
+```bash
+curl --location --request GET 'https://rtc-api.zego.im/?Action=DescribeRoomList&AppId=1111111111&Timestamp=1654767863&Signature=ttttttttttt&SignatureVersion=2.0&SignatureNonce=bbe594dbabdd3502&PageIndex=1&PageSize=200'
+```
+
+#### response
+
+```json
+{
+     "Code": 0,
+     "Data": {
+         "TotalCount": 3,
+         "RoomList": [
+             {
+                 "RoomId": "room2",
+                 "UserCount": 3
+             },
+             {
+                 "RoomId": "room1",
+                 "UserCount": 2
+             },
+             {
+                 "RoomId": "room3",
+                 "UserCount": 1
+             }
+         ]
+     },
+     "Message": "success",
+     "RequestId": "TestRequestId1653535713776559000"
+}
+```
+
 
 ## About us
 
 https://www.zegocloud.com/
 
 ## License
+
 The MIT License (MIT).

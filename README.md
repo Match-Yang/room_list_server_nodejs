@@ -2,7 +2,6 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ZEGOCLOUD/room_list_server_nodejs)
 
-
 This is an example of a server program for "querying the room list under your appid"
 
 Notice

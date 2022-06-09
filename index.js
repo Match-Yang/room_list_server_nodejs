@@ -59,11 +59,11 @@ var describeRoomList = function (req, res) {
         uri: url, method: "GET", json: true
     },
         function (_err, _res, _resBody) {
-            console.log('Url: ', url)
-            console.log('StatusCode: ', _res.statusCode)
-            console.log('Error: ', _err)
+            // console.log('Url: ', url)
+            // console.log('StatusCode: ', _res.statusCode)
+            // console.log('Error: ', _err)
             if (!_err && _res.statusCode) {
-                console.log(_resBody)
+                // console.log(_resBody)
                 cache[cacheKey] = {
                     body: _resBody,
                     timestamp_ms: timestamp_ms

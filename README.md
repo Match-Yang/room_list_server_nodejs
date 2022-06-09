@@ -29,12 +29,22 @@ Create project on [ZEGOCLOUD Console](https://console.zegocloud.com), then get t
 4. Once done you will get an url for your instance, try accessing `https://<heroku url>/describe_room_list` to check if it works.
 
 
+After deplopyed successfully, you can get your server url by click this `view button`
 
+![1654773020234.png](image/README/1654773020234.png)
 
+After clicking, you will be redirected to `your-app-name.herokuapp.com`, you can test your api by appending `/describe_room_list` to that url.
 
-## Protocol description
+you will get a json response
+
+![1654773265675.png](image/README/1654773265675.png)
+
+## ZEGOCLOUD room list protocol description
+
 The following is the description of the zegocloud server interface, which is thid demo used
+
 ### Interface prototype
+
 - Interface name: get room list
 - Request method: GET
 - Request path: /?Action=DescribeRoomList
@@ -100,7 +110,6 @@ curl --location --request GET 'https://rtc-api.zego.im/?Action=DescribeRoomList&
      "RequestId": "TestRequestId1653535713776559000"
 }
 ```
-
 
 ## About us
 

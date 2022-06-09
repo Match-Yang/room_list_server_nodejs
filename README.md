@@ -52,7 +52,7 @@ The following is the description of the zegocloud server interface, which is thi
 ### Query parameters
 
 | Parameter name | Required | Description |
-| ---------------- | -------- | ----------------------- -------------------------------------------------- --- |
+| ---------------- | -------- | --------------- |
 | AppId | Required | |
 | Signature | Required | |
 | SignatureNonce | Required | |
@@ -64,19 +64,17 @@ The following is the description of the zegocloud server interface, which is thi
 ### Response
 
 | Parameter name | Type | Required | Remarks |
-| ------------------------ | ------- | -------- | ------- ----------------------- |
-| Code | number | Required | None |
-| Message | string | Required | None |
-| RequestId | string | Required | None |
-| Data | object | Not required | None |
+| ------------------------ | ------- | -------- | ----------------- |
+| Code | number | Required |  |
+| Message | string | Required |  |
+| RequestId | string | Required |  |
+| Data | object | Not required |  |
 | &nbsp;└ TotalCount | integer | optional | total number of rooms |
 | &nbsp;└ RoomList | array | Not required | Room list, sorted as: number of people from most to least |
 | &nbsp;&nbsp;└ RoomId | string | Optional | RoomId |
 | &nbsp;&nbsp;└ UserCount | integer | optional | number of users |
 
 ### Example
-
----
 
 #### request
 

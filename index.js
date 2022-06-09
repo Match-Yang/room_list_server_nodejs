@@ -31,7 +31,7 @@ function nocache(req, res, next) {
 }
 
 var cache = new Map()
-const cacheExpireMS = 5000
+const cacheExpireMS = 500
 var makeCacheKey = function (index, size) {
     return `${index},${size}`
 }

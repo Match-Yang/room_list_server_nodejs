@@ -1,4 +1,4 @@
-# EasyExample Call Server - NodeJS
+# NodeJS Server Example - ZEGOCLOUD Room List 
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ZEGOCLOUD/room_list_server_nodejs)
 

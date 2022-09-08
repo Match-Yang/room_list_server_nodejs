@@ -45,9 +45,16 @@ The following is the description of the zegocloud server interface, which is thi
 
 ### Interface prototype
 
+- **Rate limit: 20 requests/second**
+
 - Interface name: get room list
 - Request method: GET
 - Request path: /?Action=DescribeRoomList
+
+
+> **Rate limit: 20 requests/second**  
+> **Rate limit: 20 requests/second**  
+> **Rate limit: 20 requests/second**  
 
 ### Query parameters
 

@@ -1,6 +1,10 @@
 # NodeJS Server Example - ZEGOCLOUD Room List 
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ZEGOCLOUD/room_list_server_nodejs)
+> **Warning**
+> 
+> This project is deprecated!!!
+> Please use https://github.com/ZEGOCLOUD/easy_server_nextjs instead!!!
+
 
 This is an example of a server program for "querying the room list under your appid"
 

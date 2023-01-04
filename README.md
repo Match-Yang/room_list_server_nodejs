@@ -1,8 +1,11 @@
 # NodeJS Server Example - ZEGOCLOUD Room List 
 
-> **Warning**
+> **Warning** **Warning** **Warning**
 > 
 > This project is deprecated!!!
+> This project is deprecated!!!
+> This project is deprecated!!!
+>
 > Please use https://github.com/ZEGOCLOUD/easy_server_nextjs instead!!!
 
 
